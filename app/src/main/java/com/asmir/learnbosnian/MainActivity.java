@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView numbers;
     TextView colors;
+    TextView family;
     TextView phrases ;
 
     @Override
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         numbers = findViewById(R.id.numbers);
+        family = findViewById(R.id.family);
         colors = findViewById(R.id.colors);
         phrases = findViewById(R.id.phrases);
 
@@ -30,10 +32,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(i);
+            }
+        });
+
         colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, PhrasesActivity.class);
+                Intent i = new Intent(MainActivity.this, ColorActivity.class);
                 startActivity(i);
             }
         });
@@ -41,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         phrases.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, ColorActivity.class);
+                Intent i = new Intent(MainActivity.this, PhrasesActivity.class);
                 startActivity(i);
             }
         });
